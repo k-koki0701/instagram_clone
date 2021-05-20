@@ -1,2 +1,9 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="login">
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <h1>instagram</h1>
+    <p><%= f.email_field :email, placeholder: "メールアドレス"%></p>
+    <p><%= f.password_field :password, placeholder: "パスワード" %></p>
+    <p><%= f.submit "ログイン" %></p>
+    <p class="btn btn-success">アカウントをお持ちでないですか？<%= link_to "登録する", new_user_path %></p>
+  <% end %>
+</div>
