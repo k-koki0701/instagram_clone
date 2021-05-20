@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <header>
+  　   <% flash.each do |key, value| %>
+    　   <%= content_tag(:div, value, class: "#{key}") %>
+  　   <% end %>
+      <% if logged_in? %>
+        <ul class="logout_buttom">
+          <li><%= link_to "プロフィール", user_path(current_user.id)%></li>
+          <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+        </ul>
+      <% else %>
+        <ul class="login_buttom">
+          <li><%= link_to "新しいアカウントを作成", new_user_path %></li>
+          <li><%= link_to "ログイン", new_session_path %></li>
+        </ul>
+      <% end %>
+    </header>
     <%= yield %>
+    <footer>
+      <p>© 2021 Instagram from Facebook</p>
+    </footer>
   </body>
 </html>
