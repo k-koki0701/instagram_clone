@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<h1>instagram</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>Picture</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
+<h1 class="post_list">投稿一覧</h1>
+  <p><%= notice %></p>
+  <% @blogs.each do |blog| %>
+    <table class="post_table">
       <tr>
-        <td><%= blog.content %></td>
-        <td><%= blog.picture %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>名前：<%= blog.user.name %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
+      <tr>
+      </tr>
+      <tr>
+        <td><内容><br><%= blog.content %></td>
+      </tr>
+      <tr class="edit">
+      <td><%= link_to '詳細', blog_path(blog.id) %>
+      <%= link_to "編集", edit_blog_path(blog.id) %>
+      <%= link_to "削除", blog_path(blog.id), method: :delete, data:{confirm: '本当に削除しますか？'} %></td>
+      </tr>
+    </table>
+  <% end %>
+  <div class="newly_posts">
+    <p class="home_posts_button"><%= link_to '投稿する', new_blog_path %></P>
+  </div>

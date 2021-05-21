@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @blog.content %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= @blog.picture %>
-</p>
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<div class="verbose_screen">
+  <h1>詳細画面</h1>
+  <p>写真</p>
+  <p><内容></p>
+  <p><%= @blog.content %></p>
+  <%= link_to '一覧へ', blogs_path %>
+</div>
