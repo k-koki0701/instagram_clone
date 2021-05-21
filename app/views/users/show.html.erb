@@ -1,9 +1,8 @@
 <h1>名前：<%= @user.name %></h1>
-<% if @user.image? %>
-  <%= image_tag @user.image %>
-<% else %>
-  <%= image_tag("/images/obake.png") %>
-<% end %>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @user.image.url unless @user.image.file.nil? %>
+</p>
 <p>メールアドレス: <%= @user.email %></p>
 <%= link_to 'プロフィール編集', edit_user_path(@user.id) %>
 <p><%= link_to 'ホーム', blogs_path %></p>

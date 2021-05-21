@@ -11,6 +11,10 @@
   <%= form_with(model: @user, local: true) do |f| %>
     <table class="account_creating_form">
       <tr>
+      <%= f.label :プロフィール画像 %>
+      <%= f.file_field :image %>
+      </tr>
+      <tr>
         <td><%= f.text_field :name, placeholder: "フルネーム"%></td>
       </tr>
       <tr>
