@@ -25,6 +25,9 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+  def favorite
+    @favorites = current_user.favorites_blogs
+  end
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :image_cache)
