@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :baria_user, only: [:edit, :destroy, :update]
+
   def index
     @blogs = Blog.all
   end
@@ -47,4 +49,9 @@ class BlogsController < ApplicationController
   def set_blog
     @blog = Blog.find(params[:id])
   end
+  def baria_user
+    unless Blog.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to blogs_path(current_user)
+    end
+   end
 end
