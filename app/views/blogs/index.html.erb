@@ -6,6 +6,7 @@
         <td>名前：<%= blog.user.name %></td>
       </tr>
       <tr>
+      <td><%= image_tag blog.picture.url unless blog.picture.file.nil? %></td>
       </tr>
       <tr>
         <td><内容><br><%= blog.content %></td>
