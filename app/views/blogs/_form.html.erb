@@ -11,8 +11,9 @@
   <% end %>
   <div class="field">
     <p><%= form.label :写真 %></p>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
+    <%= image_tag(@blog.picture.url) if @blog.picture && @blog.picture.url %>
+    <%= form.file_field :picture %>
+    <%= form.hidden_field :picture_cache %>
   </div>
   <div class="blog_content">
    <%= form.text_area :content, placeholder: "いまなにしてる？", size: "30x10" %>
