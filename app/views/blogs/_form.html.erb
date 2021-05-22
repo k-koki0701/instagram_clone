@@ -11,7 +11,9 @@
   <% end %>
   <div class="field">
     <p><%= form.label :写真 %></p>
-    <%= image_tag(@blog.picture.url) if @blog.picture && @blog.picture.url %>
+    <% if @blog.picture && @blog.picture.url %>
+      <%= image_tag @blog.picture.url ,class:'icon'%>
+    <% end %>
     <%= form.file_field :picture %>
     <%= form.hidden_field :picture_cache %>
   </div>

@@ -7,7 +7,11 @@
         <td>名前：<%= blog.user.name %></td>
       </tr>
       <tr>
-      <td><%= image_tag blog.picture.url unless blog.picture.file.nil? %></td>
+        <td>
+        　<% unless blog.picture.file.nil? %>
+      　    <%= image_tag blog.picture.url ,class:'icon'%>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td><内容><br><%= blog.content %></td>
