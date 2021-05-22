@@ -18,8 +18,8 @@
     <%= form.hidden_field :picture_cache %>
   </div>
   <div class="blog_content">
-   <%= form.text_area :content, placeholder: "いまなにしてる？", size: "30x10" %>
+    <%= form.text_area :content, placeholder: "いまなにしてる？", size: "30x10" %>
+    <p><%= form.submit %></p>
+    <%= link_to 'ホームへ', blogs_path %>
   </div>
-  <p><%= form.submit %></p>
-  <%= link_to 'ホームへ', blogs_path %>
 <% end %>
