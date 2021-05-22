@@ -9,25 +9,29 @@
     </div>
   <% end %>
   <%= form_with(model: @user, local: true) do |f| %>
-    <table class="account_creating_form">
-      <tr>
-      <%= f.label :プロフィール画像 %>
-      <%= f.file_field :image %>
-      </tr>
-      <tr>
-        <td><%= f.text_field :name, placeholder: "フルネーム"%></td>
-      </tr>
-      <tr>
-        <td><%= f.email_field :email, placeholder: "メールアドレス"  %></td>
-      </tr>
-      <tr>
-        <td><%= f.password_field :password, placeholder: "パスワード" %></td>
-      </tr>
-      <tr>
-        <td><%= f.password_field :password_confirmation, placeholder: "パスワード(再確認)" %></td>
-      </tr>
-      <tr>
-        <td><%= f.submit "登録する" %></td>
-      </tr>
-    </table>
+    <div class="account_edit">
+      <table  class="account_creating_form">
+        <tr class="photo_edit">
+        <p><%= f.label :プロフィール画像 %></p>
+        <%= f.file_field :image %>
+        </tr>
+        <div>
+          <tr>
+            <td><%= f.text_field :name, placeholder: "フルネーム"%></td>
+          </tr>
+          <tr>
+            <td><%= f.email_field :email, placeholder: "メールアドレス"  %></td>
+          </tr>
+          <tr>
+            <td><%= f.password_field :password, placeholder: "パスワード" %></td>
+          </tr>
+          <tr>
+            <td><%= f.password_field :password_confirmation, placeholder: "パスワード(再確認)" %></td>
+          </tr>
+          <tr>
+            <td><%= f.submit "登録する" %></td>
+          </tr>
+        </div>
+      </table>
+    </div>
   <% end %>
