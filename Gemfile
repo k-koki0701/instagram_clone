@@ -29,6 +29,10 @@ gem 'mimemagic', '0.3.7'
 
 gem 'faker'
 
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
